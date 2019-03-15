@@ -1,6 +1,16 @@
 from post import app
 import json
 
+# Test method to return all entries
+
+
+def test_all():
+    with app.test_client() as T:
+        response = T.get('/diary/api/v1/entry')
+        info = json.loads(response.data)
+        diary = info['diary_entries'][1]['Title']
+        assert type(info) == dict
+        assert diary == 'Reading'
 
 # Test method to test the add an entry API
 
