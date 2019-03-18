@@ -7,10 +7,12 @@ import json
 def test_all():
     with app.test_client() as T:
         response = T.get('/diary/api/v1/entry')
-        info = json.loads(response.data)
+        info = response.get_json()
         diary = info['diary_entries'][1]['Title']
-        assert type(info) == dict
+        diary2 = info['diary_entries'][1]['id']
         assert diary == 'Reading'
+        assert diary2 == 2
+        assert type(info) == dict
 
 # Test method to test the add an entry API
 
