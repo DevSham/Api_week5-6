@@ -16,12 +16,6 @@ Diary = [
 ]
 
 
-@app.route('/diary/api/v1/entry', methods=['GET'])
-# Returning all diary entries
-def get_all_entries():
-    entries = [entry for entry in Diary]
-    return jsonify({'diary_entries': entries})
-
 # Adding an entry
 @app.route('/diary/api/v1/entry', methods=['POST'])
 def add_entry():
