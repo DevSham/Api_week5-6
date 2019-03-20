@@ -9,7 +9,7 @@ def test_update_entry():
                              'Title': 'Teaching',
                              'Description': 'This is to teach',
                              'Time': '13:00-18:00pm'})
-        info = json.loads(response.data)
+        info = response.get_json()
         mod1 = info['Task'][0]['Title']
         mod2 = info['Task'][0]['Description']
         mod3 = info['Task'][0]['Time']
@@ -18,7 +18,7 @@ def test_update_entry():
         assert mod2 == 'This is to teach'
         assert mod3 == '13:00-18:00pm'
         assert mod4 == 1
-        
+
 
 # Test method to test the add an entry API
 
