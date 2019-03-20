@@ -21,12 +21,7 @@ Diary = [
 def get_one_entry(entry_id):
     diari = [entry for entry in Diary if entry['id'] == entry_id]
     return jsonify({'My_diary': diari})
-
-@app.route('/diary/api/v1/entry', methods=['GET'])
-# Returning all diary entries
-def get_all_entries():
-    entries = [entry for entry in Diary]
-    return jsonify({'diary_entries': entries})
+    
 
 # Adding an entry
 @app.route('/diary/api/v1/entry', methods=['POST'])

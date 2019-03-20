@@ -17,16 +17,7 @@ def test_specific_entry():
         assert my_dic2 == 1
         assert my_dic3 == "Swimming"
         assert my_dic4 == "This is so goood"
-# Test method to return all entries
 
-
-def test_all():
-    with app.test_client() as T:
-        response = T.get('/diary/api/v1/entry')
-        info = json.loads(response.data)
-        diary = info['diary_entries'][1]['Title']
-        assert type(info) == dict
-        assert diary == 'Reading'
 
 # Test method to test the add an entry API
 
