@@ -21,7 +21,7 @@ Diary = [
 def get_one_entry(entry_id):
     diari = [entry for entry in Diary if entry['id'] == entry_id]
     return jsonify({'My_diary': diari})
-    
+
 
 # Adding an entry
 @app.route('/diary/api/v1/entry', methods=['POST'])
