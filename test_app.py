@@ -7,7 +7,7 @@ import json
 def test_specific_entry():
     with app.test_client() as T:
         response = T.get('/diary/api/v1/entry/1')
-        info = json.loads(response.data)
+        info = response.get_json()
         my_dic = info['My_diary'][0]['Time']
         my_dic2 = info['My_diary'][0]['id']
         my_dic3 = info['My_diary'][0]['Title']
