@@ -4,6 +4,12 @@ python:
 # command to install dependencies
 install:
   - pip install -r requirements.txt
+  - pip install pytest
+  - pip install pytest-cov
+  - pip install coveralls
 # command for running testss
 script:
-  - pytest -vv
+  - pytest -vv --cov=create_entry/
+#command for getting the test coverage
+after_success:
+  - coveralls
