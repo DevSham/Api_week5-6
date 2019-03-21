@@ -1,0 +1,17 @@
+language: python
+python:
+  - "3.5.2"
+# command to install dependencies
+install:
+  - pip install -r requirements.txt
+  - pip install python-coveralls  # To install python-coveralls
+  - pip install coverage       # To install coverage.py
+before scripts:
+  - git clone https://github.com/shamim2019/Api_week5-6.git
+
+# command for running testss
+script:
+  - pytest -vv 
+#command for getting the test coverage
+after_success:
+  - coveralls # upload reports to coveralls.io
