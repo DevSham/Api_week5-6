@@ -9,7 +9,7 @@ install:
   - pip install coveralls
 # command for running testss
 script:
-  - pytest -vv --cov=create_entry/
+  - pytest -vv --cov=post.py
 #command for getting the test coverage
 after_success:
   - coveralls
