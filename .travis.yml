@@ -10,7 +10,7 @@ install:
 
 # command for running testss
 script:
-  - pytest -vv coveralls/tests.py
+  - pytest -vv --cov = test_app.py
 #command for getting the test coverage
 after_success:
   - coveralls # upload reports to coveralls.io
