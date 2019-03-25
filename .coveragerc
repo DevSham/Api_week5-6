@@ -1,11 +1,11 @@
 [run]
-omit =
-    */test_app*
-
 [report]
-exclude_lines =
-    pragma: no cover
-    def __repr__
-    raise NotImplementedError
-    if __name__ == .__main__.:
-    def parse_args
+omit = 
+        */shamim/*
+        */python?.?/*
+        */__pycache__/*
+        *.pyc
+        */mymodule/tests/*
+        *__init__.py*
+        *tests*
+        
