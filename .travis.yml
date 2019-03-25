@@ -9,7 +9,7 @@ install:
 
 # command for running testss
 script:
-  - pytest -vv 
+  - python3 -m pytest --cov 
 #command for getting the test coverage
 after_success:
   - coveralls # upload reports to coveralls.io
